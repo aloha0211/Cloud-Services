@@ -24,6 +24,9 @@ public class PowerFailureApp extends Application {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
         init();
+        if (singleton != null) {
+            throw new IllegalArgumentException("crash verified!");
+        }
     }
 
     private void init() {
